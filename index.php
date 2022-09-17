@@ -1,6 +1,7 @@
 <?php 
 
 require_once("Config/Config.php");
+require_once("Helpers/Helpers.php");
 
 $url = !empty($_GET['url']) ? $_GET['url'] : 'home/home' ;
 $arrUrl = explode("/",$url);        //quita las "/" de la url y las almacena en un array la ruta

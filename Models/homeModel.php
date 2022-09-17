@@ -9,63 +9,6 @@ class HomeModel extends Mysql{
         
     }
 
-    public function setUser(string $nombre, int $edad){
-
-
-        $query_insert = "INSERT INTO tb_usuarios(nombre,edad) VALUES (?,?)";
-        $arrData = array($nombre,$edad);
-        $request_insert = $this->insert($query_insert,$arrData);
-        return $request_insert;
-
-    }
-
-    
-    public function getUser($id){
-
-
-     
-        $sql = "SELECT * FROM tb_usuarios WHERE id=$id";
-    
-        $request = $this->select($sql);
-        return $request;
-
-    }
-
-
-    public function updateUser(int $id, string $nombre, int $edad){
-
-        $sql = "UPDATE  tb_usuarios SET nombre = ?,edad = ? WHERE id = $id";
-        $arrData = array($nombre,$edad);
-        $request = $this->update($sql,$arrData);
-        return $request;
-
-    }
-
-
-    public function getAllUsers(){
-
-        $sql = "SELECT * FROM tb_usuarios";
-        
-        $request = $this->select_all($sql);
-        return $request;
-
-
-
-    }
-
-
-    public function deleteUser($id){
-
-        $sql = "DELETE FROM tb_usuarios WHERE id = $id";
-        $request = $this->delete($sql);
-        return $request;
-
-    }
-
-
-
-
-
 
 }
 
