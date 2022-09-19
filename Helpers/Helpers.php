@@ -45,6 +45,15 @@ function dep($data){
 
 }
 
+
+
+function getModal(string $nameModal, $data){
+
+    $view_modal = "Views/Template/Modals/{$nameModal}.php";
+    require_once $view_modal;
+
+}
+
  //Elimina exceso de espacios entre palabras - Evita inyecciones sql en los formularios
  function strClean($strCadena){
     $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
