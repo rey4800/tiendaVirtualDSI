@@ -12,7 +12,7 @@ class Dashboard extends Controllers{
     public function dashboard(){
 
         $data['id'] = 2;
-        $data['tag_page'] = "Dashboard-Kayfa";
+        $data['page_tag'] = "Dashboard-Kayfa";
         $data['page_title'] = "Dashboard-Kayfa";
         $data['page_name'] = "dashboard";
 

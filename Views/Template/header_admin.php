@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#009688">
     <link rel="shorcut icon" href="<?=media();?>/images/favicon.ico">
 
-    <title><?php echo $data['tag_page'];?></title>
+    <title><?php echo $data['page_tag'];?></title>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/style.css">

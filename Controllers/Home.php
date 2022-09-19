@@ -12,7 +12,7 @@ class Home extends Controllers{
     public function home(){
 
         $data['id'] = 1;
-        $data['tag_page'] = "Home";
+        $data['page_tag'] = "Home";
         $data['page_title'] = "Pagina Principal";
         $data['page_name'] = "home";
 
