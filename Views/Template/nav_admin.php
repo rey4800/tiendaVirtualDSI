@@ -14,7 +14,7 @@
         <span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?=base_url();?>/crearUsuario"><i class="icon fa fa-circle-o" aria-hidden="true"></i> Crear Usuario</a></li>
-            <li><a class="treeview-item" href="<?=base_url();?>/usuarios" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Usuarios</a></li>
+            <li><a class="treeview-item" href="<?=base_url();?>/usuarios"><i class="icon fa fa-circle-o"></i> Usuarios</a></li>
             <li><a class="treeview-item" href="<?=base_url();?>/roles"><i class="icon fa fa-circle-o"></i> Roles</a></li>
             <li><a class="treeview-item" href="<?=base_url();?>/permisos"><i class="icon fa fa-circle-o"></i> Permisos</a></li>
           </ul>
