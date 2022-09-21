@@ -1,5 +1,38 @@
 var tableUsuarios;
+
 document.addEventListener('DOMContentLoaded', function () {
+
+	tableUsuarios = $('#tableUsuarios').dataTable( {
+		"aProcessing":true,
+		"aServerSide":true,
+        "language": {
+        	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        },
+        "ajax":{
+            "url": " "+base_url+"/Usuarios/getUsuarios",
+            "dataSrc":""
+        },
+        "columns":[
+            {"data":"idpersona"},
+            {"data":"nombres"},
+            {"data":"apellidos"},
+            {"data":"email_user"},
+            {"data":"telefono"},
+            {"data":"nombrerol"},
+            {"data":"status"},
+            {"data":"options"}
+        ],
+        "resonsieve":"true",
+        "bDestroy": true,
+        "iDisplayLength": 10,
+        "order":[[0,"desc"]]  
+    });
+
+
+
+
+
+
 
 
     let formUsuario = document.querySelector("#formUsuario");
@@ -30,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (objData.status) {
                     $('#modalFormUsuario').modal("hide");
                     formUsuario.reset();
-                   // tableUsuarios.ajax.reload(null, false);
+                  // tableUsuarios.ajax.reload(null, false);
                     swal("Usuarios", objData.msg, "success");
                 } else {
                     swal("Error", objData.msg, "error");
