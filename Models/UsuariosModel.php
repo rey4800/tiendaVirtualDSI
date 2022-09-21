@@ -118,7 +118,7 @@
 				}
 				$request = $this->update($sql,$arrData);
 			}else{
-				$request = "exist";
+				$request = 0;
 			}
 			return $request;
 		

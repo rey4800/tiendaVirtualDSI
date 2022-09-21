@@ -88,31 +88,31 @@
             </tr>
             <tr>
               <td>Nombres:</td>
-              <td id="celNombre">Jacob</td>
+              <td id="celNombre">Carlos</td>
             </tr>
             <tr>
               <td>Apellidos:</td>
-              <td id="celApellido">Jacob</td>
+              <td id="celApellido">Posada</td>
             </tr>
             <tr>
               <td>Teléfono:</td>
-              <td id="celTelefono">Larry</td>
+              <td id="celTelefono">78445554</td>
             </tr>
             <tr>
               <td>Email (Usuario):</td>
-              <td id="celEmail">Larry</td>
+              <td id="celEmail">Carlos@ues.edu.sv</td>
             </tr>
             <tr>
               <td>Tipo Usuario:</td>
-              <td id="celTipoUsuario">Larry</td>
+              <td id="celTipoUsuario">Administrador</td>
             </tr>
             <tr>
               <td>Estado:</td>
-              <td id="celEstado">Larry</td>
+              <td id="celEstado">Activo</td>
             </tr>
             <tr>
               <td>Fecha registro:</td>
-              <td id="celFechaRegistro">Larry</td>
+              <td id="celFechaRegistro">2022/02/02</td>
             </tr>
           </tbody>
         </table>
