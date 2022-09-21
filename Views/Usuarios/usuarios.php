@@ -1,6 +1,6 @@
 <?php 
     headerAdmin($data); 
-    getModal('modalUsuarios',$data);
+    getModal('modalUsuarios',$data); //helpers
 ?>
     <main class="app-content">
       <div class="app-title">

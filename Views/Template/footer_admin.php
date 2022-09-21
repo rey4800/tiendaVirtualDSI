@@ -18,7 +18,8 @@
         <!-- Data table plugin-->
     <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
-  
+    <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/bootstrap-select.min.js"></script>
+
 
     <?php if($data['page_name'] == "rol_usuario"){?>
     <script src="<?php echo media(); ?>/js/functions_roles.js"></script>
