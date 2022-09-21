@@ -47,7 +47,9 @@
 			if(count($arrData)>0){
 				for($i=0; $i<count($arrData); $i++){
 
-					$htmlOptions .= '<option value="' .$arrData[$i]['idrol'].'">'.$arrData[$i]['nombrerol'].'</option>';
+					if($arrData[$i]['status'] == 1 ){
+						$htmlOptions .= '<option value="'.$arrData[$i]['idrol'].'">'.$arrData[$i]['nombrerol'].'</option>';
+						}
 				}
 			}
 

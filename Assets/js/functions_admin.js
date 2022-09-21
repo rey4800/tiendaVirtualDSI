@@ -1,13 +1,16 @@
 
+//Bloquear ciertas teclas y permitir solo numeros
 function controlTag(e) {
     tecla = (document.all) ? e.keyCode : e.which;
     if (tecla==8) return true; 
     else if (tecla==0||tecla==9)  return true;
-    patron =/[0-9\s]/;
+    patron =/[0-9\s]/;      //permitir numeros del cero al nueve
     n = String.fromCharCode(tecla);
     return patron.test(n); 
 }
 
+
+//Validar solo letras sin nuemro y simbolos
 function testText(txtString){
     var stringText = new RegExp(/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/);
     if(stringText.test(txtString)){
@@ -17,6 +20,7 @@ function testText(txtString){
     }
 }
 
+//validara solo entradas de numeros del cero al nueve
 function testEntero(intCant){
     var intCantidad = new RegExp(/^([0-9])*$/);
     if(intCantidad.test(intCant)){
@@ -26,6 +30,7 @@ function testEntero(intCant){
     }
 }
 
+//validar formato de email
 function fntEmailValidate(email){
     var stringEmail = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
     if (stringEmail.test(email) == false){
