@@ -6,6 +6,14 @@ class Dashboard extends Controllers{
         
         parent::__construct(); //herencia de la clase Controllers
 
+
+			session_start();
+			if(empty($_SESSION['login']))
+			{
+				header('Location: '.base_url().'/login');
+			}
+      
+            getPermisos(1);
     }
 
 

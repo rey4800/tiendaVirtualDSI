@@ -54,6 +54,21 @@ function getModal(string $nameModal, $data){
 
 }
 
+function getPermisos(int $idmodulo){
+    require_once ("Models/PermisosModel.php");
+    $objPermisos = new PermisosModel();
+    $idrol = $_SESSION['userData']['idrol'];
+    $arrPermisos = $objPermisos->permisosModulo($idrol);
+    $permisos = '';
+    $permisosMod = '';
+    if(count($arrPermisos) > 0 ){
+        $permisos = $arrPermisos;
+        $permisosMod = isset($arrPermisos[$idmodulo]) ? $arrPermisos[$idmodulo] : "";
+    }
+    $_SESSION['permisos'] = $permisos;
+    $_SESSION['permisosMod'] = $permisosMod;
+}
+ 
  //Elimina exceso de espacios entre palabras - Evita inyecciones sql en los formularios
  function strClean($strCadena){
     $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''], $strCadena);
