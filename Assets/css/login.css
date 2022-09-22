@@ -1,7 +1,7 @@
 
 
 #fondo {
-	background-image: url("");
+	background-image: url(https://lh3.googleusercontent.com/p/AF1QipPPIJPZxderEO70B2wQf_8O8pkTxaV8mvnE0Pot=w1080-h608-p-no-v0);
 	text-align: center;
 	background-position: center center;
 	background-size: cover;
@@ -27,7 +27,7 @@
 
 
 #section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://files.fm/u/ba9m3y2hg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/fondo.png");
     text-align: center;
 	background-position: center center;
 	background-size: cover;
