@@ -13,11 +13,14 @@ const LIBS = "Libraries/";
 const VIEWS = "Views/";
 
 //Datos para la conexion a base de datos
+
 const DB_HOST = "localhost";
 const DB_NAME = "db_tiendavirtual";
 const DB_USER = "root";
 const DB_PASSWORD = "";
 const DB_CHARSET = "charset=utf8";
+
+
 
 	//Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
