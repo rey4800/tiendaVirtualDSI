@@ -2,8 +2,10 @@
 
 //Variables constantes acceder a directorios
 
-//define("BASE_URL", "http://localhost/tienda_virtual/");
+
 const BASE_URL = "http://localhost/tienda_virtual";
+//url en la nube
+//const BASE_URL = "https://tienda-virtual-pr19004.herokuapp.com";
 
 //Zona horaria
 date_default_timezone_set('America/El_Salvador');
@@ -19,6 +21,14 @@ const DB_NAME = "db_tiendavirtual";
 const DB_USER = "root";
 const DB_PASSWORD = "";
 const DB_CHARSET = "charset=utf8";
+
+//Datos para la conexion a base de datos externa
+/*
+const DB_HOST = "us-cdbr-east-06.cleardb.net";
+const DB_NAME = "heroku_79fb5a24eba3054";
+const DB_USER = "b851d76bdd4c24";
+const DB_PASSWORD = "da646ecc";
+const DB_CHARSET = "charset=utf8";*/
 
 
 
