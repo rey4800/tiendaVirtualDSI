@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2022 a las 06:43:36
+-- Tiempo de generación: 23-09-2022 a las 17:33:06
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -70,6 +70,18 @@ CREATE TABLE `detalle_temp` (
   `precio` decimal(11,2) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `token` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagen`
+--
+
+CREATE TABLE `imagen` (
+  `id` bigint(20) NOT NULL,
+  `productoid` bigint(20) NOT NULL,
+  `img` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 -- --------------------------------------------------------
@@ -205,7 +217,7 @@ INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `t
 CREATE TABLE `producto` (
   `idproducto` bigint(20) NOT NULL,
   `categoriaid` bigint(20) NOT NULL,
-  `codigo` varchar(30) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `codigo` varchar(30) COLLATE utf8mb4_swedish_ci NOT NULL,
   `nombre` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(11,2) NOT NULL,
@@ -214,6 +226,13 @@ CREATE TABLE `producto` (
   `datecreated` datetime NOT NULL DEFAULT current_timestamp(),
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`idproducto`, `categoriaid`, `codigo`, `nombre`, `descripcion`, `precio`, `stock`, `imagen`, `datecreated`, `status`) VALUES
+(6, 1, '53344', 'ffdf', '<p>rtrtrtr</p>', '45.00', 12, '', '2022-09-23 09:30:58', 1);
 
 -- --------------------------------------------------------
 
@@ -239,7 +258,7 @@ INSERT INTO `rol` (`idrol`, `nombrerol`, `descripcion`, `status`) VALUES
 (4, 'Servicio al cliente', 'Servicio al cliente sistema', 1),
 (5, 'Bodega', 'Bodega', 1),
 (6, 'Resporteria', 'Resporteria Sistema', 2),
-(7, 'Cliente', 'Clientes tienda', 2),
+(7, 'Cliente', 'Clientes tienda', 1),
 (8, 'Ejemplo rol', 'Ejemplo rol sitema', 0),
 (9, 'Coordinador', 'Coordinador', 0),
 (10, 'Consulta Ventas', 'Consulta Ventas', 0);
@@ -266,6 +285,13 @@ ALTER TABLE `detalle_pedido`
 -- Indices de la tabla `detalle_temp`
 --
 ALTER TABLE `detalle_temp`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `productoid` (`productoid`);
+
+--
+-- Indices de la tabla `imagen`
+--
+ALTER TABLE `imagen`
   ADD PRIMARY KEY (`id`),
   ADD KEY `productoid` (`productoid`);
 
@@ -333,6 +359,12 @@ ALTER TABLE `detalle_temp`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `imagen`
+--
+ALTER TABLE `imagen`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `modulo`
 --
 ALTER TABLE `modulo`
@@ -360,7 +392,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -384,6 +416,12 @@ ALTER TABLE `detalle_pedido`
 --
 ALTER TABLE `detalle_temp`
   ADD CONSTRAINT `detalle_temp_ibfk_1` FOREIGN KEY (`productoid`) REFERENCES `producto` (`idproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `imagen`
+--
+ALTER TABLE `imagen`
+  ADD CONSTRAINT `imagen_ibfk_1` FOREIGN KEY (`productoid`) REFERENCES `producto` (`idproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedido`
