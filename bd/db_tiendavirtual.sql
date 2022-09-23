@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2022 a las 17:33:06
+-- Tiempo de generación: 23-09-2022 a las 20:30:16
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -83,6 +83,13 @@ CREATE TABLE `imagen` (
   `productoid` bigint(20) NOT NULL,
   `img` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `imagen`
+--
+
+INSERT INTO `imagen` (`id`, `productoid`, `img`) VALUES
+(5, 7, 'pro_e43a84ea74d954a13be22caeb98bf59c.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,12 +205,12 @@ CREATE TABLE `persona` (
 INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `telefono`, `email_user`, `password`, `nit`, `nombrefiscal`, `direccionfiscal`, `toke`, `rolid`, `datecreated`, `status`) VALUES
 (1, '7897987987', 'Abel', 'OSH', 78454121, 'abel@info.com', '8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414', '', '', '', '', 1, '2020-08-13 00:51:44', 1),
 (2, '7865421565', 'Julio Profe', 'Hernández', 789465487, 'julio@info.com', '8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414', '', '', '', '', 1, '2020-08-13 00:54:08', 1),
-(3, '879846545454', 'Pablo', 'Arana', 784858856, 'pablo@info.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 3, '2020-08-14 01:42:34', 2),
-(4, '65465465', 'Jorge', 'Arana', 987846545, 'jorge@info.com', '5eab4465b7e8c1118332a2a413a03c7d1bfcae606fd3e8cba3ad8cbf1b076996', '', '', '', '', 3, '2020-08-22 00:27:17', 1),
+(3, '879846545454', 'Pablo', 'Arana', 784858856, 'pablo@info.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 3, '2020-08-14 01:42:34', 0),
+(4, '65465465', 'Jorge', 'Arana', 987846545, 'jorge@info.com', '5eab4465b7e8c1118332a2a413a03c7d1bfcae606fd3e8cba3ad8cbf1b076996', '', '', '', '', 3, '2020-08-22 00:27:17', 0),
 (5, '4654654', 'Carme', 'Arana', 646545645, 'carmen@infom.com', 'be63ad947e82808780278e044bcd0267a6ac6b3cd1abdb107cc10b445a182eb0', '', '', '', '', 1, '2020-08-22 00:35:04', 1),
-(6, '8465484', 'Alex', 'Méndez', 4654654545, 'alex@info.com', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '', '', '', '', 2, '2020-08-22 00:48:50', 1),
+(6, '8465484', 'Alex', 'Méndez', 4654654545, 'alex@info.com', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '', '', '', '', 2, '2020-08-22 00:48:50', 0),
 (7, '123456', 'Reynaldo', 'Romero', 78481648, 'rey@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 1, '2022-09-22 11:48:38', 1),
-(8, '22222', 'Daniel', 'Romero', 8787878, 'dan@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 2, '2022-09-22 12:50:31', 1),
+(8, '22222', 'Daniel', 'Romero', 8787878, 'dan@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 2, '2022-09-22 12:50:31', 0),
 (9, '12333', 'Rey', 'Pana', 11111, 'a@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '11111', 'reyna', 'mi casa', '', 7, '2022-09-22 15:16:26', 0),
 (10, '333', 'Carlos', 'Perez', 45353, 'perez@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '342432', 'rewrwe', 'fsdfsfsf', '', 7, '2022-09-22 16:36:08', 1),
 (11, '65655', 'Migueles', 'Ayalas', 42342345, 'migueles@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '4234235', 'migue5', 'sdasdasdsada5', '', 7, '2022-09-22 16:37:18', 1);
@@ -232,7 +239,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`idproducto`, `categoriaid`, `codigo`, `nombre`, `descripcion`, `precio`, `stock`, `imagen`, `datecreated`, `status`) VALUES
-(6, 1, '53344', 'ffdf', '<p>rtrtrtr</p>', '45.00', 12, '', '2022-09-23 09:30:58', 1);
+(7, 2, '2525252', 'Audifonos Sony', '<p>Audifonos Sony v. 5.00</p>', '20.00', 15, '', '2022-09-23 12:16:05', 1);
 
 -- --------------------------------------------------------
 
@@ -255,9 +262,9 @@ INSERT INTO `rol` (`idrol`, `nombrerol`, `descripcion`, `status`) VALUES
 (1, 'Administrador', 'Acceso a todo el sistema', 1),
 (2, 'Supervisores', 'Supervisor de tienda', 1),
 (3, 'Vendedores', 'Acceso a módulo ventas', 1),
-(4, 'Servicio al cliente', 'Servicio al cliente sistema', 1),
-(5, 'Bodega', 'Bodega', 1),
-(6, 'Resporteria', 'Resporteria Sistema', 2),
+(4, 'Servicio al cliente', 'Servicio al cliente sistema', 0),
+(5, 'Bodega', 'Bodega', 0),
+(6, 'Resporteria', 'Resporteria Sistema', 0),
 (7, 'Cliente', 'Clientes tienda', 1),
 (8, 'Ejemplo rol', 'Ejemplo rol sitema', 0),
 (9, 'Coordinador', 'Coordinador', 0),
@@ -362,7 +369,7 @@ ALTER TABLE `detalle_temp`
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `modulo`
@@ -392,7 +399,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`

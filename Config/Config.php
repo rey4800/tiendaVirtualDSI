@@ -27,4 +27,6 @@ const DB_CHARSET = "charset=utf8";
 	const SMONEY = "$";
 
 
+const  CAT_SLIDER =  "1";
+
 ?>
