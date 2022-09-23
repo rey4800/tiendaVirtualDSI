@@ -23,6 +23,7 @@ class Dashboard extends Controllers{
         $data['page_tag'] = "Dashboard-Kayfa";
         $data['page_title'] = "Dashboard-Kayfa";
         $data['page_name'] = "dashboard";
+        $data['page_functions_js'] = "functions_admin.js";
 
       
         $this->views->getView($this,"dashboard",$data);

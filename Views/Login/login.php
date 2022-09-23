@@ -23,7 +23,7 @@
       </div>
       <div class="login-box">
         <div id="divLoading" >
-          <div>
+          <div style="display:none">
             <img src="<?= media(); ?>/images/loading.svg" alt="Loading">
           </div>
         </div>

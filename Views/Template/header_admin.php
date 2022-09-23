@@ -13,12 +13,13 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="<?php echo media(); ?>/css/style.css">
   
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="<?=base_url();?>/dashboard">Kayfa Store</a>
+    <header class="app-header colordash"><a class="app-header__logo logoEstilo colordash" href="<?=base_url();?>/dashboard">Kayfa Store</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
