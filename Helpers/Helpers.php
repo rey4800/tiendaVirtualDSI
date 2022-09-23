@@ -68,6 +68,18 @@ function getPermisos(int $idmodulo){
     $_SESSION['permisos'] = $permisos;
     $_SESSION['permisosMod'] = $permisosMod;
 }
+
+
+function uploadImage(array $data, string $name){
+    $url_temp = $data['tmp_name'];
+    $destino    = 'Assets/images/uploads/'.$name;        
+    $move = move_uploaded_file($url_temp, $destino);
+    return $move;
+}
+
+function deleteFile(string $name){
+    unlink('Assets/images/uploads/'.$name);
+}
  
  //Elimina exceso de espacios entre palabras - Evita inyecciones sql en los formularios
  function strClean($strCadena){

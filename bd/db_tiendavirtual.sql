@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2022 a las 19:33:13
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 23-09-2022 a las 06:43:36
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,9 +31,18 @@ CREATE TABLE `categoria` (
   `idcategoria` bigint(20) NOT NULL,
   `nombre` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `portada` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   `datecreated` datetime NOT NULL DEFAULT current_timestamp(),
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`idcategoria`, `nombre`, `descripcion`, `portada`, `datecreated`, `status`) VALUES
+(1, 'Equipo Informatico Gaming 3', 'Equipos informaticos, teclado, mouse, cpu.', 'img_3f7bffd656f16fe290ba0d28c2c020bc.jpg', '2022-09-22 22:17:26', 1),
+(2, 'Audifonos 2', 'Audifonos de todo tipo', 'img_54ffeef38c01ca0e7c635096897d2573.jpg', '2022-09-22 22:35:17', 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +95,7 @@ INSERT INTO `modulo` (`idmodulo`, `titulo`, `descripcion`, `status`) VALUES
 (3, 'Clientes', 'Clientes de tienda', 1),
 (4, 'Productos', 'Todos los productos', 1),
 (5, 'Pedidos', 'Pedidos', 1),
-(6, 'Categorias', 'Categorias productos', 1);
+(6, 'Categorías', 'Categorías productos', 1);
 
 -- --------------------------------------------------------
 
@@ -124,11 +133,6 @@ CREATE TABLE `permisos` (
 --
 
 INSERT INTO `permisos` (`idpermiso`, `rolid`, `moduloid`, `r`, `w`, `u`, `d`) VALUES
-(46, 1, 1, 1, 1, 1, 1),
-(47, 1, 2, 1, 1, 1, 1),
-(48, 1, 3, 1, 1, 1, 1),
-(49, 1, 4, 1, 1, 1, 1),
-(50, 1, 5, 1, 1, 1, 1),
 (56, 3, 1, 0, 0, 0, 0),
 (57, 3, 2, 0, 0, 0, 0),
 (58, 3, 3, 1, 1, 1, 0),
@@ -139,12 +143,18 @@ INSERT INTO `permisos` (`idpermiso`, `rolid`, `moduloid`, `r`, `w`, `u`, `d`) VA
 (63, 4, 3, 1, 1, 1, 0),
 (64, 4, 4, 0, 0, 0, 0),
 (65, 4, 5, 0, 0, 0, 0),
-(102, 2, 1, 1, 0, 0, 0),
-(103, 2, 2, 0, 0, 0, 0),
-(104, 2, 3, 1, 1, 0, 0),
-(105, 2, 4, 1, 1, 1, 1),
-(106, 2, 5, 1, 0, 1, 0),
-(107, 2, 6, 0, 0, 0, 0);
+(114, 2, 1, 1, 0, 0, 0),
+(115, 2, 2, 0, 0, 0, 0),
+(116, 2, 3, 1, 1, 0, 0),
+(117, 2, 4, 1, 1, 1, 1),
+(118, 2, 5, 1, 0, 1, 0),
+(119, 2, 6, 0, 0, 0, 0),
+(132, 1, 1, 1, 1, 1, 1),
+(133, 1, 2, 1, 1, 1, 1),
+(134, 1, 3, 1, 1, 1, 1),
+(135, 1, 4, 1, 1, 1, 1),
+(136, 1, 5, 1, 1, 1, 1),
+(137, 1, 6, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +189,12 @@ INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `t
 (3, '879846545454', 'Pablo', 'Arana', 784858856, 'pablo@info.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 3, '2020-08-14 01:42:34', 2),
 (4, '65465465', 'Jorge', 'Arana', 987846545, 'jorge@info.com', '5eab4465b7e8c1118332a2a413a03c7d1bfcae606fd3e8cba3ad8cbf1b076996', '', '', '', '', 3, '2020-08-22 00:27:17', 1),
 (5, '4654654', 'Carme', 'Arana', 646545645, 'carmen@infom.com', 'be63ad947e82808780278e044bcd0267a6ac6b3cd1abdb107cc10b445a182eb0', '', '', '', '', 1, '2020-08-22 00:35:04', 1),
-(6, '8465484', 'Alex', 'Méndez', 4654654545, 'alex@info.com', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '', '', '', '', 2, '2020-08-22 00:48:50', 1);
+(6, '8465484', 'Alex', 'Méndez', 4654654545, 'alex@info.com', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '', '', '', '', 2, '2020-08-22 00:48:50', 1),
+(7, '123456', 'Reynaldo', 'Romero', 78481648, 'rey@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 1, '2022-09-22 11:48:38', 1),
+(8, '22222', 'Daniel', 'Romero', 8787878, 'dan@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '', '', '', '', 2, '2022-09-22 12:50:31', 1),
+(9, '12333', 'Rey', 'Pana', 11111, 'a@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '11111', 'reyna', 'mi casa', '', 7, '2022-09-22 15:16:26', 0),
+(10, '333', 'Carlos', 'Perez', 45353, 'perez@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '342432', 'rewrwe', 'fsdfsfsf', '', 7, '2022-09-22 16:36:08', 1),
+(11, '65655', 'Migueles', 'Ayalas', 42342345, 'migueles@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '4234235', 'migue5', 'sdasdasdsada5', '', 7, '2022-09-22 16:37:18', 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +205,7 @@ INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `t
 CREATE TABLE `producto` (
   `idproducto` bigint(20) NOT NULL,
   `categoriaid` bigint(20) NOT NULL,
-  `codigo` varchar(30) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `codigo` varchar(30) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `nombre` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(11,2) NOT NULL,
@@ -303,7 +318,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idcategoria` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcategoria` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_pedido`
@@ -333,13 +348,13 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `idpermiso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `idpermiso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idpersona` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idpersona` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
