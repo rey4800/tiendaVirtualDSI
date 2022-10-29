@@ -42,7 +42,7 @@
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
 								Nombre producto 2
 							</a>
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+							<!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
 							<br><br>
 							<hr>
 							<span class="header-cart-item-info">

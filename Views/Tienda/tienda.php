@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="flex-w flex-c-m m-tb-10">
-					<div style="display: none;" class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+					<div  class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 
                     &nbsp;&nbsp;
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
@@ -196,7 +196,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?=$portada;?>" alt="<?= $arrProductos[$p]['nombre'];?>">
 
-							<a  style="display: none;" href="<?=base_url().'/tienda/producto/'.$arrProductos[$p]['nombre'];?>" class="block2-btn flex-c-m stext-103 cl22 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="<?=base_url().'/tienda/producto/'.$arrProductos[$p]['nombre'];?>" class="block2-btn flex-c-m stext-103 cl22 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal ">
 								Ver  producto
 							</a>
 						</div>
@@ -212,7 +212,7 @@
 								</span>
 							</div>
 
-							<div style="display: none;" class="block2-txt-child2 flex-r p-t-3">
+							<div  class="block2-txt-child2 flex-r p-t-3">
 								<a href="<?=base_url().'/tienda/producto/'.$arrProductos[$p]['nombre'];?>" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="<?=media();?>/tienda/images/icons/icon-heart-01.png" alt="ICON">
 									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="<?=media();?>/tienda/images/icons/icon-heart-02.png" alt="ICON">
