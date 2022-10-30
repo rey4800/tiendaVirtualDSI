@@ -56,6 +56,14 @@ function dep($data){
 
 }
 
+function getFile(string $url, $data){
+
+    require_once("Views/{$url}.php");
+    $file = ob_get_clean();
+    return $file;
+
+}
+
 
 
 function getModal(string $nameModal, $data){

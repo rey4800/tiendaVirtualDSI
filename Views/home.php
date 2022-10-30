@@ -1,5 +1,5 @@
 <?php headerTienda($data); 
-	getModal('modalCarrito',$data);
+	
 	$arrSlider = $data['slider'];
 
 	$arrProductos = $data['productos'];

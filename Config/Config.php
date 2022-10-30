@@ -40,6 +40,10 @@ const DB_CHARSET = "charset=utf8";*/
 	const SMONEY = "$";
 
 
-const  CAT_SLIDER =  "1";
+	const  CAT_SLIDER =  "1";
+
+	//Datos para Encriptar /Desencriptar
+	const KEY = 'dsi2';
+	const METHODENCRIPT = 'AES-128-ECB';
 
 ?>
