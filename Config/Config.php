@@ -46,4 +46,7 @@ const DB_CHARSET = "charset=utf8";*/
 	const KEY = 'dsi2';
 	const METHODENCRIPT = 'AES-128-ECB';
 
+	//Envío
+	const COSTOENVIO = 10;
+
 ?>
