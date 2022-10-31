@@ -113,7 +113,7 @@
 							</li>
 
 							<li>
-								<a href="#footer">Contactos</a>
+								<a href="<?=base_url();?>/contacto">Contactos</a>
 							</li>
 						</ul>
 					</div>	
