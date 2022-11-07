@@ -42,11 +42,42 @@ const DB_CHARSET = "charset=utf8";*/
 
 	const  CAT_SLIDER =  "1";
 
+
+
+
+	//Datos Empresa
+
+	//Datos envio de correo
+	const NOMBRE_REMITENTE = "Tienda Virtual Kayfa";
+	const NOMBRE_EMPESA = "Kayfa Store SV";
+	const WEB_EMPRESA = "https://tienda-virtual-pr19004.herokuapp.com";
+	const DIRECCION = "Avenida Gavividia zona 7, El Salvador";
+	const TELEMPRESA = "+(503)78787845";
+	const EMAIL_EMPRESA = "KafaStore@gmail.com";
+	
+
+
 	//Datos para Encriptar /Desencriptar
 	const KEY = 'dsi2';
 	const METHODENCRIPT = 'AES-128-ECB';
 
 	//Envío
 	const COSTOENVIO = 10;
+
+	const EMAIL_PEDIDOS = "info@abelosh.com";
+
+		//Módulos
+		const MCLIENTES = 3;
+		const MPEDIDOS = 5;
+	
+		//Roles
+		const RADMINISTRADOR = 1;
+		const RCLIENTES = 7;
+
+		const STATUS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
+
+		//Buscador
+	const PROBUSCAR = 4;
+
 
 ?>

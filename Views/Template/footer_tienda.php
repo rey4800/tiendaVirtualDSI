@@ -43,14 +43,23 @@
 					</h4>
 
 					<ul>
-						<li class="p-b-10">
-							<a href="<?=base_url();?>/foro" class="stext-107 cl7 hov-cl1 trans-04">
-								Visitar Foro
-							</a>
-						</li>
 
+					<?php 
 						
-					</ul>
+						if(isset($_SESSION['login'])){
+						?>
+
+							<li class="p-b-10">
+								<a href="<?=base_url();?>/foro" class="stext-107 cl7 hov-cl1 trans-04">Foro</a>
+							</li>
+
+						<?php }else{ ?>
+
+							<li class="p-b-10">
+								<a href="#"  onclick="openModal2();" class="stext-107 cl7 hov-cl1 trans-04">Foro</a>
+							</li>
+						
+						<?php }?>
 				</div>
 
 				<div class="col-sm-6 col-lg-4 p-b-50">
@@ -123,6 +132,8 @@
   const base_url  = "<?=base_url();?>";
   const smony = "<?=SMONEY;?>";
 </script>
+
+
 <!--===============================================================================================-->	
 	<script src="<?=media();?>/tienda/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -154,10 +165,19 @@
 	<script src="<?=media();?>/tienda/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 
 <!--===============================================================================================-->
+ <!-- Data table plugin-->
+ 
+ <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo media(); ?>/js/plugins/bootstrap-select.min.js"></script>
+
+
+	<script src="<?=media();?>/tienda/js/functions.js"></script>	
 	<script src="<?=media();?>/tienda/js/main.js"></script>
+	<script src="<?=media();?>/tienda/js/pedidoCliente.js"></script>
 	<script src="<?= media();?>/js/functions_admin.js"></script>
 	<script src="<?= media() ?>/js/functions_login.js"></script>
-	<script src="<?=media();?>/tienda/js/functions.js"></script>
+	<script src="<?= media() ?>/js/functions_foro.js"></script>
 
 </body>
 </html>

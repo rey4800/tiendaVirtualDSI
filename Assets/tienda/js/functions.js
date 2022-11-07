@@ -270,3 +270,82 @@ function fntUpdateCant(pro,cant){
 	}
 	return false;
 }
+
+
+if(document.querySelector("#txtDirecciona")){
+	let direccion = document.querySelector("#txtDirecciona");
+	direccion.addEventListener('keyup', function(){
+		let dir = this.value;
+		fntViewPago();
+	});
+}
+
+if(document.querySelector("#txtCiudada")){
+	let ciudad = document.querySelector("#txtCiudada");
+	ciudad.addEventListener('keyup', function(){
+		let c = this.value;
+		fntViewPago();
+	});
+}
+
+function fntViewPago(){
+	let direccion = document.querySelector("#txtDirecciona").value;
+	let ciudad = document.querySelector("#txtCiudada").value;
+	if(direccion == "" || ciudad == ""){
+		document.querySelector('#divMetodoPago').classList.add("notblock");
+	}else{
+		document.querySelector('#divMetodoPago').classList.remove("notblock");
+	}
+}
+
+
+if(document.querySelector("#btnComprar")){
+	let btnPago = document.querySelector("#btnComprar");
+	btnPago.addEventListener('click',function() { 
+
+		let dir = document.querySelector("#txtDirecciona").value;
+	    let ciudad = document.querySelector("#txtCiudada").value;
+	    let inttipopago = document.querySelector("#listtipopago").value; 
+	    if( dir == "" || ciudad == "" || inttipopago =="" ){
+			swal("", "Complete datos de envío" , "error");
+			return;
+		}else{
+			//divLoading.style.display = "flex";
+			let request = (window.XMLHttpRequest) ? 
+	                    new XMLHttpRequest() : 
+	                    new ActiveXObject('Microsoft.XMLHTTP');
+			let ajaxUrl = base_url+'/Tienda/procesarVenta';
+			let formData = new FormData();
+		    formData.append('direccion',dir);    
+		   	formData.append('ciudad',ciudad);
+			formData.append('inttipopago',inttipopago);
+		   	request.open("POST",ajaxUrl,true);
+		    request.send(formData);
+		    request.onreadystatechange = function(){
+		    	if(request.readyState != 4) return;
+		    	if(request.status == 200){
+		    		let objData = JSON.parse(request.responseText);
+		    		if(objData.status){
+		    			window.location = base_url+"/tienda/confirmarpedido/";
+		    		}else{
+		    			swal("", objData.msg , "error");
+		    		}
+		    	}
+		    	//divLoading.style.display = "none";
+            	return false;
+		    }
+		}
+
+	},false);
+}
+
+
+
+
+function pagado(){
+
+
+	swal("Pagado", "El pago se realizo con exito" , "success");
+
+
+}

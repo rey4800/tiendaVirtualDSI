@@ -48,3 +48,18 @@ document.addEventListener('DOMContentLoaded',function(){
 	}
 
 }, false)
+
+
+
+function openModal2() {
+
+    $('#modalMostrarLogin').modal('show');
+	document.getElementById("menu").style.display="none";
+}
+
+function mostrarMenu(){
+
+	document.getElementById("menu").style.display="block";
+
+
+}

@@ -226,6 +226,62 @@ public function getProductoT(string $producto){
      
  }	
 
+ public function cantProdSearch($busqueda){
+
+    $this->con = new Mysql();
+    $sql = "SELECT COUNT(*) as total_registro FROM producto  WHERE nombre LIKE '%$busqueda%' AND status  =  1";
+
+
+   $result_register = $this->con->select($sql);
+   $total_registro = $result_register;
+
+
+   return $total_registro;
+ }
+
+ public function getProdSearch($busqueda,$desde,$porpaginar){
+    $this->con  = new Mysql();
+
+     $sql = "SELECT p.idproducto,
+                   p.codigo,
+                   p.nombre,
+                   p.descripcion,
+                   p.categoriaid,
+                   c.nombre  as categoria,
+                   p.precio,
+                   p.stock
+            FROM producto p
+            INNER JOIN  categoria c
+            ON p.categoriaid = c.idcategoria
+            WHERE p.status = 1 AND p.nombre LIKE '%$busqueda%' ORDER BY p.idproducto DESC LIMIT $desde,$porpaginar";
+
+                $request = $this->con->select_all($sql);
+                if(count($request)>0){
+                    for($i=0 ; $i<count($request);$i++){
+                        $intIdProducto =  $request[$i]['idproducto'];
+                        $sqlImg = "SELECT img
+                    FROM imagen
+                    WHERE productoid = $intIdProducto";
+            $arrImg = $this->con->select_all($sqlImg);
+    
+            if(count($arrImg)>0){
+                for($c=0;$c<count($arrImg);$c++){
+                    $arrImg[$c]['url_image'] = media().'/images/uploads/'.$arrImg[$c]['img'];
+                }
+    
+            }
+            $request[$i]['images'] =  $arrImg;
+                    }
+    
+                }
+    
+        
+    
+        return $request;
+
+ }
+
+
 
 }
 
